@@ -51,7 +51,6 @@ def after_request(response):
 @app.route('/users', methods=['POST', 'GET'])
 @cross_origin()
 def data():
-    
     # POST a data to database
     if request.method == 'POST':
         body = request.json

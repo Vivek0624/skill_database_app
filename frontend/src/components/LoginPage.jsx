@@ -29,7 +29,11 @@ const LoginPage = () => {
       const res = await axios.post("http://localhost:5000/api/login", {
         email,
         password,
-      });
+      },{
+        headers: {
+          'Content-Type': 'application/json',
+          "Access-Control-Allow-Origin": "*",
+          }});
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', res.data.user.username);
       window.location.href = "/";
